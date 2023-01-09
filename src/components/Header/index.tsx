@@ -1,6 +1,6 @@
 import { HeaderContainer } from './styles'
 import { Timer, Scroll } from 'phosphor-react'
-import NtnLogo from '../../assets/n.png'
+import NtnLogo from '../../assets/ntn-roboto.png'
 import { NavLink } from 'react-router-dom'
 
 export function Header() {
