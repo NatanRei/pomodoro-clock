@@ -44,7 +44,6 @@ const BaseInput = styled.input`
     color: ${(props) => props.theme['gray-500']};
   }
 `
-
 export const TaskInput = styled(BaseInput)`
   flex: 1;
 
