@@ -23,7 +23,7 @@ interface CyclesContextType {
   setActiveCycleHowNull: () => void
   handleSetAmountSeccondsPassed: (seconds: number) => void
   handleInterruptActiveCycle: () => void
-  handleCreateNewCycle: (data: NewCycleFormData) => void
+  createNewCycle: (data: NewCycleFormData) => void
 }
 
 interface CycleContextProviderProps {
@@ -72,7 +72,7 @@ export function CyclesContextProvider({ children }: CycleContextProviderProps) {
     setActiveCycleHowNull()
   }
 
-  const handleCreateNewCycle = (data: NewCycleFormData) => {
+  const createNewCycle = (data: NewCycleFormData) => {
     const id: string = String(new Date().getTime())
 
     const newCycle: Cycle = {
@@ -85,7 +85,6 @@ export function CyclesContextProvider({ children }: CycleContextProviderProps) {
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
     setAmountSeccondsPassed(0)
-    // reset()
   }
 
   return (
@@ -98,7 +97,7 @@ export function CyclesContextProvider({ children }: CycleContextProviderProps) {
         amountSeccondsPassed,
         handleSetAmountSeccondsPassed,
         handleInterruptActiveCycle,
-        handleCreateNewCycle,
+        createNewCycle,
         cycles,
       }}
     >
